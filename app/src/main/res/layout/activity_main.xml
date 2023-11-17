@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/article_heading"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary"
         android:padding="@dimen/padding_regular"
@@ -29,6 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/article_subheading">
+
+
 
         <TextView
             android:id="@+id/article"
