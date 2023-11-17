@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +9,7 @@
         android:id="@+id/article_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="@color/design_default_color_primary"
         android:padding="@dimen/padding_regular"
         android:text="@string/article_title"
         android:textAppearance="@android:style/TextAppearance.Large"
@@ -26,13 +25,18 @@
         android:text="@string/article_subtitle"
         android:textAppearance="@android:style/TextAppearance" />
 
-    <TextView
-        android:id="@+id/article"
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/article_subheading"
-        android:lineSpacingExtra="@dimen/line_spacing"
-        android:text="@string/article_text" />
+        android:layout_below="@id/article_subheading">
 
+        <TextView
+            android:id="@+id/article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:lineSpacingExtra="@dimen/line_spacing"
+            android:text="@string/article_text" />
 
+    </ScrollView>
 </RelativeLayout>
