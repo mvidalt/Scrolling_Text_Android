@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/article_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
         android:background="@color/design_default_color_primary"
         android:padding="@dimen/padding_regular"
         android:text="@string/article_title"
@@ -16,38 +17,55 @@
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/article_heading">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/article_subheading"
+            android:layout_width="183dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_column="0"
+            android:padding="@dimen/padding_regular"
+            android:text="@string/article_subtitle"
+            android:textAppearance="@android:style/TextAppearance" />
 
-            <TextView
-                android:id="@+id/article_subheading"
+        <ScrollView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/padding_regular"
-                android:text="@string/article_subtitle"
-                android:textAppearance="@android:style/TextAppearance" />
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:lineSpacingExtra="@dimen/line_spacing"
+                    android:text="@string/article_text" />
 
-            <TextView
-                android:id="@+id/article"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:lineSpacingExtra="@dimen/line_spacing"
-                android:text="@string/article_text" />
+                <EditText
+                    android:id="@+id/miEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ADD COMMENT" />
-        </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+                <Button
+                    android:id="@+id/addButtonComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADD COMMENT" />
+
+                <TextView
+                    android:id="@+id/comentarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+        </ScrollView>
+    </GridLayout>
+</LinearLayout>
