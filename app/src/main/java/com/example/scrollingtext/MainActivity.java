@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void saveComment(){
         if(addButtonComment.getText().toString().equals("SEND COMMENT")){
-            String nuevoMensaje = editText.getText().toString().trim(); // Eliminar espacios en blanco al principio y al final
+            String nuevoMensaje = editText.getText().toString().trim();
 
             if (!nuevoMensaje.isEmpty()) {
                 String mensajeConNumero = "Mensaje " + contadorMensajes + ": " + nuevoMensaje;
